@@ -1,0 +1,114 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.app-header {
+  padding: 4rem 2rem 2rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.app-header h1 {
+  color: var(--text-primary);
+  font-size: 38px;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  position: relative;
+}
+
+.app-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-sky-primary);
+  border-radius: 2px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.app-main {
+  flex: 1;
+  padding: 3rem 2rem;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.app-footer {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  border-top: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .app-header h1 {
+    font-size: 28px;
+  }
+
+  .app-header h1::after {
+    width: 40px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .app-main {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .app-footer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}

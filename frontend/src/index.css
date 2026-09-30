@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550;600;650&family=Manrope:wght@600;650;700&display=swap');
+
+:root {
+  /* Sky-Blue Liquid Glass Palette */
+  --bg-primary: #F5FAFD;
+  --bg-secondary: #EAF7FF;
+  --bg-white: #FFFFFF;
+  --text-primary: #172B3A;
+  --text-secondary: #66788A;
+  --text-muted: #9CA3AF;
+  --border-color: rgba(110, 160, 190, 0.18);
+  
+  /* Sky Blue Accents */
+  --color-sky-primary: #72BFE8;
+  --color-sky-strong: #4E9FD1;
+  --color-sky-light: #CFEAFF;
+  --color-sky-soft: #EAF7FF;
+  
+  /* Teal Support */
+  --color-teal: #5CB8B2;
+  --color-teal-light: rgba(92, 184, 178, 0.1);
+  
+  /* Warm Accent */
+  --color-warm: #EBC7A7;
+  --color-warm-light: rgba(235, 199, 167, 0.1);
+  
+  /* Accent Colors */
+  --accent-primary: rgba(114, 191, 232, 0.88);
+  --accent-hover: rgba(92, 172, 220, 0.95);
+  --accent-active: rgba(78, 159, 209, 1);
+  --accent-light: rgba(114, 191, 232, 0.12);
+  
+  /* Status Colors */
+  --success: #5CB8B2;
+  --success-light: rgba(92, 184, 178, 0.1);
+  --warning: #EBC7A7;
+  --warning-light: rgba(235, 199, 167, 0.1);
+  --error: #D49A72;
+  --error-light: rgba(212, 154, 114, 0.1);
+  
+  /* Input Colors */
+  --input-border: rgba(110, 160, 190, 0.18);
+  --input-focus: rgba(78, 159, 209, 0.70);
+  
+  /* Glass Effects */
+  --glass-surface: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.70);
+  --glass-blur: 16px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(52, 91, 116, 0.04);
+  --shadow-md: 0 2px 8px rgba(52, 91, 116, 0.06);
+  --shadow-lg: 0 10px 30px rgba(52, 91, 116, 0.07);
+  --shadow-glass: 0 4px 14px rgba(78, 159, 209, 0.18);
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Font Variables */
+  --font-heading: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Animated Background */
+.ambient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ambient-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.25;
+  animation: blobFloat 30s ease-in-out infinite;
+}
+
+.ambient-blob-1 {
+  width: 700px;
+  height: 700px;
+  background: var(--color-sky-primary);
+  top: -150px;
+  right: -150px;
+  animation-delay: 0s;
+}
+
+.ambient-blob-2 {
+  width: 600px;
+  height: 600px;
+  background: var(--color-sky-light);
+  bottom: -200px;
+  left: -150px;
+  animation-delay: -10s;
+}
+
+.ambient-blob-3 {
+  width: 500px;
+  height: 500px;
+  background: var(--color-teal);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -20s;
+  opacity: 0.18;
+}
+
+.ambient-blob-4 {
+  width: 400px;
+  height: 400px;
+  background: var(--color-warm);
+  top: 25%;
+  right: 15%;
+  animation-delay: -15s;
+  opacity: 0.12;
+}
+
+@keyframes blobFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(40px, -40px) scale(1.03);
+  }
+  50% {
+    transform: translate(-30px, 30px) scale(0.97);
+  }
+  75% {
+    transform: translate(-40px, -30px) scale(1.01);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-blob {
+    animation: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-primary);
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background: var(--bg-secondary);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}

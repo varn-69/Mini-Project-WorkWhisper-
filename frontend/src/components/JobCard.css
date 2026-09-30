@@ -1,0 +1,217 @@
+.job-card {
+  background: var(--glass-surface);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  border: 1px solid var(--glass-border);
+  transform-style: preserve-3d;
+}
+
+.job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(114, 191, 232, 0.25);
+}
+
+.job-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-sky-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.job-card:hover::before {
+  transform: scaleX(1);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 0.25rem;
+  font-family: var(--font-heading);
+  letter-spacing: -0.01em;
+}
+
+.job-company {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.job-rank {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-sky-primary);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: var(--shadow-sm);
+}
+
+.job-location {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.job-source {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  background: rgba(110, 160, 190, 0.08);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.job-salary {
+  font-size: 14px;
+  color: var(--color-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.match-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.match-badge {
+  background: var(--color-sky-strong);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.match-percentage {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+}
+
+.skills-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-tag {
+  font-size: 12px;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag.matched {
+  background: var(--color-teal-light);
+  color: var(--color-teal);
+  border: 1px solid var(--color-teal);
+}
+
+.skill-tag.matched:hover {
+  background: var(--color-teal);
+  color: white;
+}
+
+.skill-tag.missing {
+  background: var(--color-warm-light);
+  color: var(--color-warm);
+  border: 1px solid var(--color-warm);
+}
+
+.skill-tag.missing:hover {
+  background: var(--color-warm);
+  color: white;
+}
+
+.view-details-button {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #31566D;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-details-button:hover {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(114, 191, 232, 0.45);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.view-details-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .job-card {
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .job-title {
+    font-size: 16px;
+  }
+
+  .job-company {
+    font-size: 13px;
+  }
+
+  .job-rank {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .match-percentage {
+    font-size: 18px;
+  }
+}
